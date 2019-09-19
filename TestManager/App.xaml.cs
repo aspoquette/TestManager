@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,14 +24,18 @@ namespace TestManager
     /// </summary>
     sealed partial class App : Application
     {
+       
         /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
+        /// SQL Connect String
         /// </summary>
+        private string connectionString = @"Data Source=DESKTOP-0UKED9N\SQLEXPRESS;Initial Catalog=Test;Integrated Security=SSPI";
+        public string ConnectionString { get => connectionString; set => connectionString = value; }
+
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
         }
 
         /// <summary>
@@ -39,6 +45,9 @@ namespace TestManager
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+
+            
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -50,10 +59,12 @@ namespace TestManager
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
+                /* DEL
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }
+                */
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;

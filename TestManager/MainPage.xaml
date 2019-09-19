@@ -7,7 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Pivot x:Name="rootPivot" Title="Test Manager">
+        <PivotItem Header="Test Dashboard">
+            <Frame x:Name="TesterPage" />
+        </PivotItem>
+        <PivotItem Header="Student">
+            <Frame x:Name="StudentsPage" />
+        </PivotItem>
+        <PivotItem Header="Station">
+            <Frame x:Name="StationsPage"/>
+        </PivotItem>
+        <PivotItem Header="Settings">
+            <Frame x:Name="SettingsPage"/>
+        </PivotItem>
+    </Pivot>
 
-    </Grid>
 </Page>

@@ -12,23 +12,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using TestManager.Pages;
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace TestManager
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace TestManager.Pages
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class StudentsPage : Page
     {
-        public MainPage()
+        public StudentsPage()
         {
             this.InitializeComponent();
-            TesterPage.Navigate(typeof(TesterPage));
-            StudentsPage.Navigate(typeof(StudentsPage));
-            StationsPage.Navigate(typeof(StationsPage));
-            SettingsPage.Navigate(typeof(SettingsPage));
         }
     }
 }
