@@ -10,11 +10,17 @@ insert into Companies (Number, StationsCompleted) Values (9, 0);
 insert into Companies (Number, StationsCompleted) Values (10, 0);
 
 insert into Stations (StationNumber, StationName) Values (1, 'Hose Loads');
-insert into Stations (StationNumber, StationName) Values (1, 'Ladders');
-insert into Stations (StationNumber, StationName) Values (1, 'Car Fires');
-insert into Stations (StationNumber, StationName) Values (1, 'Ropes and Knots');
-insert into Stations (StationNumber, StationName) Values (1, 'Rescue Carries');
+insert into Stations (StationNumber, StationName) Values (2, 'Ladders');
+insert into Stations (StationNumber, StationName) Values (3, 'Car Fires');
+insert into Stations (StationNumber, StationName) Values (4, 'Ropes and Knots');
+insert into Stations (StationNumber, StationName) Values (5, 'Rescue Carries');
+insert into Stations (StationNumber, StationName) Values (6, 'Hose Loads2');
+insert into Stations (StationNumber, StationName) Values (7, 'Ladders2');
+insert into Stations (StationNumber, StationName) Values (8, 'Car Fires2');
+insert into Stations (StationNumber, StationName) Values (9, 'Ropes and Knots2');
+insert into Stations (StationNumber, StationName) Values (10, 'Rescue Carries2');
 
 insert into CompletedStations (StationId, CompanyId) Values (1, 1);
 insert into CompletedStations (StationId, CompanyId) Values (2, 2);
 insert into CompletedStations (StationId, CompanyId) Values (3, 3);
+insert into CompletedStations (StationId, CompanyId) Values (9, 1);

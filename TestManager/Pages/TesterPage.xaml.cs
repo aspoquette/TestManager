@@ -28,89 +28,73 @@ namespace TestManager.Pages
         public TesterPage()
         {
             this.InitializeComponent();
-            AllowDrops();
-            DontAllowDrops();
-
+            
         }
-        public Boolean AllowDropTrue = true;
-        public Boolean AllowDropFalse = false;
+        //TODO: ObservableCollection Implmentation
+        //public ObservableCollection<Station> stations { get; } = new ObservableCollection<Station>();
 
-        public ObservableCollection<Station> stations { get; } = new ObservableCollection<Station>();
+                       
 
-
-
-        /// <summary>
-        /// Turn on AllowDrop.
-        /// TODO: Currently hardcoded for demo data turn on
-        /// </summary>
-        public void AllowDrops()
-        {
-            InitializeComponent();
-            this.Station1Grid.AllowDrop = AllowDropTrue;
-            this.Station2Grid.AllowDrop = AllowDropTrue;
-        }
-        /// <summary>
-        /// Turn of AllowDrop.
-        /// TODO: Currently hardcoded for demo data turn off
-        /// </summary>
-        public void DontAllowDrops()
-        {
-            InitializeComponent();
-            this.Station3Grid.AllowDrop = AllowDropFalse;
-            this.Station4Grid.AllowDrop = AllowDropFalse;
-        }
-
-    
-
-        public async void AllowDropHighlight(UIElement sender, DragStartingEventArgs args)
+        public void AllowDropHighlight(UIElement sender, DragStartingEventArgs args)
         {
             //list of Stations
 
             StationList completedStations = new StationList();
             completedStations = DataHelper.GetCompletedStations(1, (App.Current as App).ConnectionString);
-
-
-            /*
-            if (Station1Grid.AllowDrop == false)
+            
+            for  (int i = 0; i < completedStations.Count; i++) 
             {
-                Station1Grid.Opacity = .3;
+                if (completedStations[i].StationNumber == 1)
+                {
+                    Station1Grid.Opacity = .3;
+                    Station1Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 2)
+                {
+                    Station2Grid.Opacity = .3;
+                    Station2Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 3)
+                {
+                    Station3Grid.Opacity = .3;
+                    Station3Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 4)
+                {
+                    Station4Grid.Opacity = .3;
+                    Station4Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 5)
+                {
+                    Station5Grid.Opacity = .3;
+                    Station5Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 6)
+                {
+                    Station6Grid.Opacity = .3;
+                    Station6Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 7)
+                {
+                    Station7Grid.Opacity = .3;
+                    Station7Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 8)
+                {
+                    Station8Grid.Opacity = .3;
+                    Station8Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 9)
+                {
+                    Station9Grid.Opacity = .3;
+                    Station9Grid.AllowDrop = false;
+                }
+                else if (completedStations[i].StationNumber == 10)
+                {
+                    Station10Grid.Opacity = .3;
+                    Station10Grid.AllowDrop = false;
+                }                
             }
-            if (Station2Grid.AllowDrop == false)
-            {
-                Station2Grid.Opacity = .3;
-            }
-            if (Station3Grid.AllowDrop == false)
-            {
-                Station3Grid.Opacity = .3;
-            }
-            if (Station4Grid.AllowDrop == false)
-            {
-                Station4Grid.Opacity = .3;
-            }
-            */
-
-            /*
-             for (int i= 0; i < completedStation.Count; i++)
-             {
-                 Station station = completedStation[i];
-                 if(station.StationNumber == 1){
-                     Station1Grid.Opacity = .3;                    
-                 }
-                 if (station.StationNumber == 2)
-                 {
-                     Station2Grid.Opacity = .3;
-                 }
-                 if (station.StationNumber == 3)
-                 {
-                     Station3Grid.Opacity = .3;
-                 }
-                 if (station.StationNumber == 4)
-                 {
-                     Station4Grid.Opacity = .3;
-                 }
-             }
-             */
-
         }
 
 
@@ -121,9 +105,29 @@ namespace TestManager.Pages
             Station2Grid.Opacity = 1;
             Station3Grid.Opacity = 1;
             Station4Grid.Opacity = 1;
+            Station5Grid.Opacity = 1;
+            Station6Grid.Opacity = 1;
+            Station7Grid.Opacity = 1;
+            Station8Grid.Opacity = 1;
+            Station9Grid.Opacity = 1;
+            Station10Grid.Opacity = 1;
+
+            Station1Grid.AllowDrop = true;
+            Station2Grid.AllowDrop = true;
+            Station3Grid.AllowDrop = true;
+            Station4Grid.AllowDrop = true;
+            Station5Grid.AllowDrop = true;
+            Station6Grid.AllowDrop = true;
+            Station7Grid.AllowDrop = true;
+            Station8Grid.AllowDrop = true;
+            Station9Grid.AllowDrop = true;
+            Station10Grid.AllowDrop = true;
         }
-        
-        
+
+        public void Company1_Drop(object sender, DragEventArgs e)
+        {
+
+        }
 
 
     }

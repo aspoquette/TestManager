@@ -15,11 +15,13 @@ namespace TestManager.DataLayer
 
         }
 
+        /*
         public static StationList GetStationsCompleted(int id)
         {
             StationList completedStations = new StationList();
 
 
+            
             //Hardcoded station return for now
             //TODO: Call logic on the station list
             Station station1 = new Station();
@@ -28,8 +30,12 @@ namespace TestManager.DataLayer
             station2.StationNumber = 2; 
             completedStations.Add(station1);
             completedStations.Add(station2);
+
+    
             return completedStations;
-        }
+            
+            
+        } */
                 
     }
 }

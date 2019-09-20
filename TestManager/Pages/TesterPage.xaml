@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    
+
     <Grid Name="StationGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,6,4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -69,13 +69,13 @@
         </StackPanel>
 
 
-        <StackPanel x:Name="Company1Card"  HorizontalAlignment="Left" Height="160" Margin="340,522,-440,-682"  VerticalAlignment="Top" Width="100"
+        <StackPanel x:Name="Company1Card"  HorizontalAlignment="Left" Height="160" Margin="155,0,0,0"  VerticalAlignment="Center" Width="100"
                     Background="Bisque" 
-                    CanDrag="True" Grid.ColumnSpan="5" Grid.RowSpan="4" DragStarting="AllowDropHighlight" DropCompleted="ResetHighlight">
+                    CanDrag="True" Grid.ColumnSpan="2" Grid.RowSpan="2" DragStarting="AllowDropHighlight" DropCompleted="ResetHighlight" Grid.Column="3" Grid.Row="1">
             <TextBox Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Company 1"/>
         </StackPanel>
-       
+
     </Grid>
 
-    
+
 </Page>
