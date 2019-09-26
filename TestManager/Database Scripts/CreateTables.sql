@@ -5,7 +5,7 @@ StationsCompleted Integer
 );
 Create TABLE Stations(
 Id Integer NOT NULL Identity Primary Key,
-StationNumber varchar(255),
+StationNumber Integer,
 StationName varchar(255),
 );
 

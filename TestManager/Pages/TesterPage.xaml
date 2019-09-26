@@ -28,43 +28,43 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel x:Name="Station1Grid" Grid.Row="0" Grid.Column="0" Margin="10"
-            Background="LightBlue" AllowDrop="False">
+            Background="LightBlue" Drop="Station1_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 1"/>
         </StackPanel>
         <StackPanel x:Name="Station2Grid" Grid.Row="0" Grid.Column="1" Margin="10"
-            Background="LightGreen">
+            Background="LightGreen" Drop="Station2_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 2"/>
         </StackPanel>
         <StackPanel x:Name="Station3Grid" Grid.Row="0" Grid.Column="2" Margin="10"
-            Background="LightCyan">
+            Background="LightCyan" Drop="Station3_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 3"/>
         </StackPanel>
         <StackPanel x:Name="Station4Grid" Grid.Row="0" Grid.Column="3" Margin="10"
-            Background="LightGoldenrodYellow">
+            Background="LightGoldenrodYellow" Drop="Station4_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 4"/>
         </StackPanel>
         <StackPanel x:Name="Station5Grid" Grid.Row="0" Grid.Column="4" Margin="10"
-            Background="DodgerBlue">
+            Background="DodgerBlue" Drop="Station5_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 5"/>
         </StackPanel>
         <StackPanel x:Name="Station6Grid" Grid.Row="0" Grid.Column="5" Margin="10"
-            Background="LightSeaGreen">
+            Background="LightSeaGreen" Drop="Station6_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 6"/>
         </StackPanel>
         <StackPanel x:Name="Station7Grid" Grid.Row="0" Grid.Column="6" Margin="10"
-            Background="LightCoral">
-            <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 6"/>
+            Background="LightCoral" Drop="Station7_Drop" DragOver="Station_DragOver">
+            <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 7"/>
         </StackPanel>
         <StackPanel x:Name="Station8Grid" Grid.Row="0" Grid.Column="7" Margin="10"
-            Background="LightPink">
-            <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 5"/>
+            Background="LightPink" Drop="Station8_Drop" DragOver="Station_DragOver">
+            <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 8"/>
         </StackPanel>
         <StackPanel x:Name="Station9Grid" Grid.Row="0" Grid.Column="8" Margin="10"
-            Background="IndianRed">
+            Background="IndianRed" Drop="Station9_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 9"/>
         </StackPanel>
         <StackPanel x:Name="Station10Grid" Grid.Row="0" Grid.Column="9" Margin="10"
-            Background="CornflowerBlue">
+            Background="CornflowerBlue" Drop="Station10_Drop" DragOver="Station_DragOver">
             <TextBlock Width="Auto" HorizontalAlignment="Center" Text="Station 10"/>
         </StackPanel>
 

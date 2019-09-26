@@ -2,7 +2,7 @@
 
 namespace TestManager.DataLayer
 {
-    class Company
+    public class Company
     {
         public List<Student> CompanyMembers { get; set; } = new List<Student>();
         public int CompanyNumber { get; set; }

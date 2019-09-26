@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using TestManager.DataLayer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +24,21 @@ namespace TestManager.Pages
     /// </summary>
     public sealed partial class StationsPage : Page
     {
+        public List<Station> Stations { get; set; }
+
         public StationsPage()
         {
             this.InitializeComponent();
+            this.LoadStations();
         }
+
+        public void LoadStations()
+        {
+            Stations = DataHelper.GetStations((App.Current as App).ConnectionString);
+            //(App.Current as App).Stations = Stations;
+            StationList.ItemsSource = Stations;
+        }
+
+
     }
 }

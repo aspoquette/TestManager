@@ -17,16 +17,16 @@ namespace TestManager.DataLayer
         /// Returns a StationList of the completed stations. 
         /// </summary>
         /// <param name="companyNumber"></param>
-        /// <param name="ConnectionString"></param>
+        /// <param name="connectionString"></param>
         /// <returns>StationList of Completed Stations</returns>
-        public static StationList GetCompletedStations(int companyNumber, string ConnectionString)
+        public static StationList GetCompletedStationsByCompany(int companyNumber, string connectionString)
         {
             const string GetCompletedStationsByCompany = " select StationId from CompletedStations " +
                 " where CompletedStations.CompanyId = @companyNumber ";
             StationList completedStations = new StationList();
             try
             {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     if (conn.State == System.Data.ConnectionState.Open)
@@ -46,12 +46,12 @@ namespace TestManager.DataLayer
                                     Debug.WriteLine("Added Station " + station.StationNumber + " to inelligible list");
                                 }
                                 reader.Close();
-                            }        
+                            }
                         }
                     }
-                    
+
                 }
-            } 
+            }
             catch (Exception eSql)
             {
                 Debug.WriteLine("Exeception: " + eSql.Message);
@@ -65,15 +65,15 @@ namespace TestManager.DataLayer
         /// </summary>
         /// <param name="stationNumber"></param>
         /// <param name="companyNumber"></param>
-        /// <param name="ConnectionString"></param>
+        /// <param name="connectionString"></param>
         /// <returns>Primary Key of the inserted row</returns>
-        public static string AddNewCompletedStation(int stationNumber, int companyNumber, string ConnectionString)
+        public static string AddNewCompletedStation(int stationNumber, int companyNumber, string connectionString)
         {
             const string InsertCompletedStation = " Insert into CompletedStations " +
-                " values (@StationId, @CompanyId) ";            
+                " values (@StationId, @CompanyId) ";
             try
             {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     if (conn.State == System.Data.ConnectionState.Open)
@@ -86,7 +86,7 @@ namespace TestManager.DataLayer
                             cmd.Parameters.Add(new SqlParameter("StationId", stationNumber));
                             cmd.Parameters.Add(new SqlParameter("CompanyId", companyNumber));
                             var completedID = cmd.ExecuteScalar();
-                            Debug.WriteLine("Inserted Completed Station " + stationNumber + " for Company " +companyNumber  );
+                            Debug.WriteLine("Inserted Completed Station " + stationNumber + " for Company " + companyNumber);
                             return completedID.ToString();
                         }
                     }
@@ -97,6 +97,43 @@ namespace TestManager.DataLayer
                 Debug.WriteLine("Exception " + eSql.Message);
             }
             return "";
+        }
+
+        public static List<Station> GetStations(string connectionString)
+        {
+            const string query = "select StationNumber, StationName from Stations";
+
+            var stations = new List<Station>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open)
+                    {
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = query;
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    var station = new Station();
+                                    station.StationNumber = reader.GetInt32(0);
+                                    station.StationName = reader.GetString(1);
+                                    stations.Add(station);
+                                }
+                            }
+                        }
+                    }
+                }
+                return stations;
+            }
+            catch (Exception eSql)
+            {
+                Debug.WriteLine("Exception: " + eSql.Message);
+            }
+            return null;
         }
     }
 }

@@ -14,11 +14,11 @@ insert into Stations (StationNumber, StationName) Values (2, 'Ladders');
 insert into Stations (StationNumber, StationName) Values (3, 'Car Fires');
 insert into Stations (StationNumber, StationName) Values (4, 'Ropes and Knots');
 insert into Stations (StationNumber, StationName) Values (5, 'Rescue Carries');
-insert into Stations (StationNumber, StationName) Values (6, 'Hose Loads2');
-insert into Stations (StationNumber, StationName) Values (7, 'Ladders2');
-insert into Stations (StationNumber, StationName) Values (8, 'Car Fires2');
-insert into Stations (StationNumber, StationName) Values (9, 'Ropes and Knots2');
-insert into Stations (StationNumber, StationName) Values (10, 'Rescue Carries2');
+insert into Stations (StationNumber, StationName) Values (6, 'Hydrant Ops');
+insert into Stations (StationNumber, StationName) Values (7, 'Presentations');
+insert into Stations (StationNumber, StationName) Values (8, 'Chimney Check');
+insert into Stations (StationNumber, StationName) Values (9, 'Foam');
+insert into Stations (StationNumber, StationName) Values (10, 'Donning');
 
 insert into CompletedStations (StationId, CompanyId) Values (1, 1);
 insert into CompletedStations (StationId, CompanyId) Values (2, 2);

@@ -15,6 +15,9 @@
         <PivotItem Header="Student">
             <Frame x:Name="StudentsPage" />
         </PivotItem>
+        <PivotItem Header="Company">
+            <Frame x:Name="CompaniesPage" />
+        </PivotItem>
         <PivotItem Header="Station">
             <Frame x:Name="StationsPage"/>
         </PivotItem>

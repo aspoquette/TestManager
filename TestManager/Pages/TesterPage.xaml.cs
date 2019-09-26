@@ -37,10 +37,22 @@ namespace TestManager.Pages
 
         public void AllowDropHighlight(UIElement sender, DragStartingEventArgs args)
         {
+
+            Station1Grid.AllowDrop = true;
+            Station2Grid.AllowDrop = true;
+            Station3Grid.AllowDrop = true;
+            Station4Grid.AllowDrop = true;
+            Station5Grid.AllowDrop = true;
+            Station6Grid.AllowDrop = true;
+            Station7Grid.AllowDrop = true;
+            Station8Grid.AllowDrop = true;
+            Station9Grid.AllowDrop = true;
+            Station10Grid.AllowDrop = true;
+
             //list of Stations
 
             StationList completedStations = new StationList();
-            completedStations = DataHelper.GetCompletedStations(1, (App.Current as App).ConnectionString);
+            completedStations = DataHelper.GetCompletedStationsByCompany(1, (App.Current as App).ConnectionString);
             
             for  (int i = 0; i < completedStations.Count; i++) 
             {
@@ -96,9 +108,11 @@ namespace TestManager.Pages
                 }                
             }
         }
-
-
-
+        public void Station_DragOver(object sender, DragEventArgs e)
+        {
+            e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+        }
+        
         public void ResetHighlight(UIElement sender, DropCompletedEventArgs args)
         {
             Station1Grid.Opacity = 1;
@@ -124,9 +138,55 @@ namespace TestManager.Pages
             Station10Grid.AllowDrop = true;
         }
 
-        public void Company1_Drop(object sender, DragEventArgs e)
+        public void Station1_Drop(object sender, DragEventArgs e)
         {
-
+            DataHelper.AddNewCompletedStation(1, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station1 and company 1");
+        }
+        public void Station2_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(2, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station2 and company 1");
+        }
+        public void Station3_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(3, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station3 and company 1");
+        }
+        public void Station4_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(4, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station4 and company 1");
+        }
+        public void Station5_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(5, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station5 and company 1");
+        }
+        public void Station6_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(6, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station6 and company 1");
+        }
+        public void Station7_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(7, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station7 and company 1");
+        }
+        public void Station8_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(8, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station8 and company 1");
+        }
+        public void Station9_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(9, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station9 and company 1");
+        }
+        public void Station10_Drop(object sender, DragEventArgs e)
+        {
+            DataHelper.AddNewCompletedStation(10, 1, (App.Current as App).ConnectionString);
+            Debug.WriteLine("Added station10 and company 1");
         }
 
 

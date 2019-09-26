@@ -28,7 +28,7 @@ namespace TestManager
         /// <summary>
         /// SQL Connect String
         /// </summary>
-        private string connectionString = @"Data Source=DESKTOP-0UKED9N\SQLEXPRESS;Initial Catalog=Test;Integrated Security=SSPI";
+        private string connectionString = @"Data Source=Desktop-Poquett\SQLEXPRESS;Initial Catalog=Test;Integrated Security=SSPI";
         public string ConnectionString { get => connectionString; set => connectionString = value; }
 
         public App()

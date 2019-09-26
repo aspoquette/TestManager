@@ -5,9 +5,40 @@
     xmlns:local="using:TestManager.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:TestManager.DataLayer"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        
+        <ListView Name="StationList"
+            ItemsSource="{x:Bind Stations}"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ScrollViewer.IsVerticalRailEnabled="True"
+                  >
 
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="StationNumber" Margin="8,0" Width="100" Foreground="DarkBlue" />
+                        <TextBlock Text="StationName" Width="300" Foreground="DarkBlue"/>                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local1:Station">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="StationNumber"
+                                   Text="{x:Bind StationNumber}"
+                                   Width="100" />
+                        <TextBlock Name="StationName"
+                                   Text="{x:Bind StationName}"
+                                   Width="300" />                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
+        </ListView>
     </Grid>
 </Page>
